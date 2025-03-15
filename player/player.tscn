@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c5ujft3t4fqmh"]
+[gd_scene load_steps=27 format=3 uid="uid://c5ujft3t4fqmh"]
 
 [ext_resource type="Script" uid="uid://rndv587sh0po" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://cej601qw6cr1q" path="res://player/car.blend" id="2_rkbax"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cihkxhgroch8b" path="res://godot_plush V2.blend" id="9_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://dnn0hkdntpvlc" path="res://player/asstes/phone.png" id="10_8t03j"]
 [ext_resource type="AudioStream" uid="uid://doech00lr2w24" path="res://sam (1).wav" id="11_2ieo8"]
+[ext_resource type="AudioStream" uid="uid://b1qtg5r78rj3g" path="res://IMG_3599a.wav" id="12_ebec5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kqu6x"]
 
@@ -134,7 +135,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.355726, 0.355294, 0.907867)
 transform = Transform3D(1, 0, 0, 0, 0.15133, 0.988483, 0, -0.988483, 0.15133, 0, 0, 0)
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="wheel/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 inner_radius = 0.207
 outer_radius = 0.17
 sides = 10
@@ -146,7 +146,6 @@ size = Vector3(0.05, 0.02, 0.35)
 material = SubResource("StandardMaterial3D_boad6")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="wheel/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(0.35, 0.02, 0.05)
 material = SubResource("StandardMaterial3D_boad6")
 
@@ -207,4 +206,9 @@ autostart = true
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.792162, 0, 0.610311, 0, 1, 0, -0.610311, 0, -0.792162, 0, 0.566801, 0)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ebec5")
+autoplay = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

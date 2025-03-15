@@ -50,3 +50,8 @@ func _on_timer_timeout():
 	$MeshInstance3D3/AudioStreamPlayer3D.play()
 	$Timer.wait_time = randi_range(5,15)
 	$Timer.start()
+
+
+func _on_audio_stream_player_finished():
+	$AudioStreamPlayer.stream = load(["res://IMG_3598.wav", "res://IMG_3599a.wav","res://20250315_125854.wav"].pick_random())
+	$AudioStreamPlayer.play()

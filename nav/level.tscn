@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b610kfhjhsk8l"]
 
 [ext_resource type="Texture2D" uid="uid://kphe5seqhe2r" path="res://Map for Gps.png" id="2_f2txt"]
-[ext_resource type="Script" path="res://nav/pathPoint.gd" id="3_1ainy"]
+[ext_resource type="Script" uid="uid://0y3d1cnlp6g6" path="res://nav/pathPoint.gd" id="3_1ainy"]
 [ext_resource type="Script" uid="uid://dlnuowjbxxfv2" path="res://nav/path_2d.gd" id="4_n6hdu"]
 
 [sub_resource type="Curve2D" id="Curve2D_61qje"]
