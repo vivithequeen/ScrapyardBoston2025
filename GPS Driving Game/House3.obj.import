@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://epxfm6gibdbw"
+path="res://.godot/imported/House3.obj-d1cac3bb5e5e53344a6ed515eb45c70f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/House3.obj-d1cac3bb5e5e53344a6ed515eb45c70f.mesh"]
+
+source_file="res://GPS Driving Game/House3.obj"
+dest_files=["res://.godot/imported/House3.obj-d1cac3bb5e5e53344a6ed515eb45c70f.mesh", "res://.godot/imported/House3.obj-d1cac3bb5e5e53344a6ed515eb45c70f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

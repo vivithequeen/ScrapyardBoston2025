@@ -1,0 +1,207 @@
+[gd_scene load_steps=26 format=3 uid="uid://c5ujft3t4fqmh"]
+
+[ext_resource type="Script" uid="uid://rndv587sh0po" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://cej601qw6cr1q" path="res://player/car.blend" id="2_rkbax"]
+[ext_resource type="Script" uid="uid://c77j18jhnpexc" path="res://player/head.gd" id="3_g1dw6"]
+[ext_resource type="Shader" uid="uid://duhyf5q4nrv5h" path="res://player/color.gdshader" id="4_g6k8r"]
+[ext_resource type="PackedScene" uid="uid://df2g5nfrkscu7" path="res://scenes/car(2).tscn" id="4_yw30f"]
+[ext_resource type="Texture2D" uid="uid://c4o557ixt1lew" path="res://player/apollo-1x.png" id="5_boad6"]
+[ext_resource type="PackedScene" uid="uid://deq0c2ilxv8pn" path="res://scenes/scuffed_arms.tscn" id="6_boad6"]
+[ext_resource type="PackedScene" uid="uid://dspeatu1js3qt" path="res://scenes/screen.tscn" id="8_rgyib"]
+[ext_resource type="PackedScene" uid="uid://cihkxhgroch8b" path="res://godot_plush V2.blend" id="9_hg6s5"]
+[ext_resource type="Texture2D" uid="uid://dnn0hkdntpvlc" path="res://player/asstes/phone.png" id="10_8t03j"]
+[ext_resource type="AudioStream" uid="uid://doech00lr2w24" path="res://sam (1).wav" id="11_2ieo8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kqu6x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqu6x"]
+size = Vector3(2, 1.5, 6.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kqu6x"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kqu6x"]
+height = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgyib"]
+shader = ExtResource("4_g6k8r")
+shader_parameter/palette = ExtResource("5_boad6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boad6"]
+albedo_color = Color(0.227426, 0.661394, 0.386432, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1dw6"]
+albedo_color = Color(0.506332, 0.398122, 0.165096, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_yw30f"]
+material = SubResource("StandardMaterial3D_g1dw6")
+text = "ZVT"
+pixel_size = 0.005
+depth = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6k8r"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rgyib"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hg6s5"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_rgyib")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hg6s5"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_hg6s5")
+size = Vector2(3.115, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ieo8"]
+albedo_texture = ExtResource("10_8t03j")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ebec5"]
+material = SubResource("StandardMaterial3D_2ieo8")
+size = Vector2(0.115, 0.28)
+
+[node name="player" type="VehicleBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_kqu6x")
+script = ExtResource("1_oul6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -0.25)
+shape = SubResource("BoxShape3D_kqu6x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_kqu6x")
+
+[node name="back1" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -2.5)
+use_as_traction = true
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="back1"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_kqu6x")
+
+[node name="front1" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.09409, 2.87587)
+use_as_traction = true
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front1"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_kqu6x")
+
+[node name="back2" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -2.5)
+use_as_traction = true
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="back2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_kqu6x")
+
+[node name="front2" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1.09409, 2.87587)
+use_as_traction = true
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_kqu6x")
+
+[node name="car" parent="." instance=ExtResource("2_rkbax")]
+transform = Transform3D(-1.28949e-08, 0, 0.295, 0, 0.295, 0, -0.295, 0, -1.28949e-08, 0.385793, 0, 0.5)
+visible = false
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353947, 0.545252, 0.435729)
+script = ExtResource("3_g1dw6")
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.159903, 0)
+
+[node name="ColorRect" type="ColorRect" parent="head/Camera3D"]
+material = SubResource("ShaderMaterial_rgyib")
+offset_left = -391.0
+offset_top = -254.0
+offset_right = 3035.0
+offset_bottom = 1611.0
+
+[node name="wheel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.355726, 0.355294, 0.907867)
+
+[node name="Node3D" type="Node3D" parent="wheel"]
+transform = Transform3D(1, 0, 0, 0, 0.15133, 0.988483, 0, -0.988483, 0.15133, 0, 0, 0)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="wheel/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+inner_radius = 0.207
+outer_radius = 0.17
+sides = 10
+material = SubResource("StandardMaterial3D_boad6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="wheel/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0)
+size = Vector3(0.05, 0.02, 0.35)
+material = SubResource("StandardMaterial3D_boad6")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="wheel/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.35, 0.02, 0.05)
+material = SubResource("StandardMaterial3D_boad6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wheel/Node3D"]
+transform = Transform3D(-1, -3.16141e-08, -8.96306e-08, -9.11019e-08, -0.0935871, 0.995612, 4.37494e-08, 0.995612, 0.0935871, 1.49012e-08, 0.00882119, -0.00135052)
+mesh = SubResource("TextMesh_yw30f")
+
+[node name="scuffed_arms" parent="wheel/Node3D" instance=ExtResource("6_boad6")]
+transform = Transform3D(-2.65664e-10, -1.50666e-09, -0.035, -0.0348424, -0.00331874, 4.0733e-10, -0.00331874, 0.0348423, -1.47468e-09, 0, 0.256468, 0.116931)
+
+[node name="Label3D" type="Label3D" parent="wheel/Node3D"]
+transform = Transform3D(-1, 8.74223e-08, 3.05157e-10, 3.06676e-10, 1.74493e-05, 1, 8.74223e-08, 1, -1.74046e-05, 0, 0.0172365, 0.143988)
+pixel_size = 0.0013
+modulate = Color(0.505882, 0.4, 0.164706, 1)
+outline_modulate = Color(0.505882, 0.4, 0.164706, 1)
+text = "KPH: 200"
+
+[node name="car(2)" parent="." instance=ExtResource("4_yw30f")]
+transform = Transform3D(-2.49155e-08, 0, 0.57, 0, 0.57, 0, -0.57, 0, -2.49155e-08, 0.249111, -0.373438, 0.353174)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363519, -0.13285, 1.03889)
+size = Vector3(0.204102, 1, 0.001)
+material = SubResource("StandardMaterial3D_g6k8r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.126111, 0.159477, -0.0262295, -0.0153289, 0.0449222, 0.199429, 0.160891, -0.120723, 0.03956, -0.188542, 0.569056, 0.913239)
+mesh = SubResource("PlaneMesh_hg6s5")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.565536, -0.155072, -0.810013, -0.0729797, 0.968901, -0.236444, 0.821488, 0.192832, 0.536631, -0.264957, 0.569056, 0.972904)
+visible = false
+size = Vector3(0.644073, 0.404785, 0.134888)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(615, 452)
+render_target_update_mode = 4
+
+[node name="screen" parent="SubViewport" instance=ExtResource("8_rgyib")]
+position = Vector2(306, 229)
+
+[node name="godot_plush V2" parent="." instance=ExtResource("9_hg6s5")]
+transform = Transform3D(-2.34244, 0, 0.109484, 0, 2.345, 0, -0.109484, 0, -2.34244, -1.2024, -0.228171, 0.369945)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.862743, 0, -0.505642, 0, 1, 0, 0.505642, 0, -0.862743, 0.72061, 0.641359, 0.731888)
+mesh = SubResource("QuadMesh_ebec5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MeshInstance3D3"]
+stream = ExtResource("11_2ieo8")
+volume_db = 76.015
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

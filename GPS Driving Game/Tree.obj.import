@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxoj2fbxp0isv"
+path="res://.godot/imported/Tree.obj-245231c7a1adc8125f32cd5a389fb798.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tree.obj-245231c7a1adc8125f32cd5a389fb798.mesh"]
+
+source_file="res://GPS Driving Game/Tree.obj"
+dest_files=["res://.godot/imported/Tree.obj-245231c7a1adc8125f32cd5a389fb798.mesh", "res://.godot/imported/Tree.obj-245231c7a1adc8125f32cd5a389fb798.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
