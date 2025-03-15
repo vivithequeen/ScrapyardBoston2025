@@ -26,6 +26,8 @@ func _physics_process(delta):
 	$wheel/Node3D/Label3D.text = str(int(abs(linear_velocity.x)))
 	if Input.is_action_just_pressed("esc"):
 		paused = !paused
+	if Input.is_action_just_pressed("r"):
+		get_tree().change_scene_to_file("res://main_menu/main.tscn")
 
 
 	#print(engine_force)

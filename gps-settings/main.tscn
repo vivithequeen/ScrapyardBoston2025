@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhn6swt37loku"]
+
+[ext_resource type="Texture2D" uid="uid://l0qvopq38r8b" path="res://Screenshot 2025-03-15 150300.png" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cvvoy3l84v7dk" path="res://Screenshot 2025-03-15 151536.png" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cowfny0418xvd" path="res://generatedtext (4).png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://3s1h8xo33ngu" path="res://On_Click.gd" id="4_1bvp3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="black_Border" type="Sprite2D" parent="."]
+position = Vector2(-60, 152)
+scale = Vector2(4.01718, 4.11)
+texture = ExtResource("1_h2yge")
+
+[node name="title _ And_BackGround" type="Sprite2D" parent="."]
+scale = Vector2(2.198, 2)
+texture = ExtResource("1_0xm2m")
+
+[node name="UI_Camera" type="Camera2D" parent="."]
+scale = Vector2(0.998114, 1)
+zoom = Vector2(0.89, 0.73)
+
+[node name="play_Button" type="TextureButton" parent="."]
+offset_left = -484.0
+offset_top = 196.0
+offset_right = 7.0
+offset_bottom = 277.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_h2yge")
+script = ExtResource("4_1bvp3")
+
+[connection signal="pressed" from="play_Button" to="play_Button" method="_on_pressed"]

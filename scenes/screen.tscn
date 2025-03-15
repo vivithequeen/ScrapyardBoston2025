@@ -1,9 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://dspeatu1js3qt"]
+[gd_scene load_steps=5 format=3 uid="uid://dspeatu1js3qt"]
 
 [ext_resource type="Texture2D" uid="uid://y58wjnpoqglx" path="res://player/screen.jpg" id="1_erqjc"]
+[ext_resource type="Script" uid="uid://b8oxg37neii4p" path="res://scenes/screen.gd" id="1_nexl8"]
+[ext_resource type="PackedScene" uid="uid://b610kfhjhsk8l" path="res://nav/level.tscn" id="2_gakxr"]
+[ext_resource type="Texture2D" uid="uid://60nxb8f7gh5y" path="res://icon.svg" id="3_qc0hx"]
 
 [node name="screen" type="Node2D"]
+script = ExtResource("1_nexl8")
 
 [node name="Screen" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_erqjc")
+
+[node name="Level" parent="." instance=ExtResource("2_gakxr")]
+position = Vector2(-160, -160)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-59, 59.5)
+scale = Vector2(0.078125, 0.0703125)
+texture = ExtResource("3_qc0hx")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -128.0
+offset_top = -135.0
+offset_right = 154.0
+offset_bottom = 135.0
+color = Color(1, 0, 0, 1)

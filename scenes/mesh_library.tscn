@@ -1,14 +1,14 @@
 [gd_scene load_steps=50 format=4 uid="uid://dw8nq3w42dtsq"]
 
-[ext_resource type="ArrayMesh" uid="uid://chhd6kquq42k2" path="res://GPS Driving Game/House1.obj" id="1_6m54x"]
-[ext_resource type="ArrayMesh" uid="uid://8kq7a8p5ue7y" path="res://GPS Driving Game/House2.obj" id="2_4ixjr"]
-[ext_resource type="ArrayMesh" uid="uid://epxfm6gibdbw" path="res://GPS Driving Game/House3.obj" id="3_38xbh"]
-[ext_resource type="ArrayMesh" uid="uid://bht0aiuhi4yqq" path="res://GPS Driving Game/House4.obj" id="4_s3t8n"]
-[ext_resource type="ArrayMesh" uid="uid://b77vc8qlogv6i" path="res://GPS Driving Game/House5.obj" id="5_qvf5i"]
-[ext_resource type="ArrayMesh" uid="uid://bpmncmm7gpuuo" path="res://GPS Driving Game/House6.obj" id="6_egsuv"]
-[ext_resource type="ArrayMesh" uid="uid://c1py0wc477efd" path="res://GPS Driving Game/Ramp.obj" id="7_vhln4"]
-[ext_resource type="ArrayMesh" uid="uid://bedwxyn4a6yuh" path="res://GPS Driving Game/Torus.obj" id="12_idqte"]
-[ext_resource type="ArrayMesh" uid="uid://bxoj2fbxp0isv" path="res://GPS Driving Game/Tree.obj" id="13_lj435"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/House1.obj" id="1_6m54x"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/House2.obj" id="2_4ixjr"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/House3.obj" id="3_38xbh"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/House4.obj" id="4_s3t8n"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/House5.obj" id="5_qvf5i"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/House6.obj" id="6_egsuv"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/Ramp.obj" id="7_vhln4"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/Torus.obj" id="12_idqte"]
+[ext_resource type="ArrayMesh" path="res://GPS Driving Game/Tree.obj" id="13_lj435"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk6o6"]
 resource_name = "Material"
