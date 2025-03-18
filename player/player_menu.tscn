@@ -1,18 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://c5ujft3t4fqmh"]
+[gd_scene load_steps=19 format=3 uid="uid://p1mrgg5xcg1f"]
 
-[ext_resource type="Script" uid="uid://rndv587sh0po" path="res://player/player.gd" id="1_oul6g"]
-[ext_resource type="PackedScene" uid="uid://cej601qw6cr1q" path="res://player/car.blend" id="2_rkbax"]
-[ext_resource type="Script" uid="uid://c77j18jhnpexc" path="res://player/head.gd" id="3_g1dw6"]
-[ext_resource type="Shader" uid="uid://duhyf5q4nrv5h" path="res://player/color.gdshader" id="4_g6k8r"]
-[ext_resource type="PackedScene" uid="uid://df2g5nfrkscu7" path="res://scenes/car(2).tscn" id="4_yw30f"]
-[ext_resource type="Texture2D" uid="uid://c4o557ixt1lew" path="res://player/apollo-1x.png" id="5_boad6"]
-[ext_resource type="PackedScene" uid="uid://deq0c2ilxv8pn" path="res://scenes/scuffed_arms.tscn" id="6_boad6"]
-[ext_resource type="PackedScene" uid="uid://dspeatu1js3qt" path="res://scenes/screen.tscn" id="8_rgyib"]
-[ext_resource type="PackedScene" uid="uid://cihkxhgroch8b" path="res://godot_plush V2.blend" id="9_hg6s5"]
-[ext_resource type="Texture2D" uid="uid://dnn0hkdntpvlc" path="res://player/asstes/phone.png" id="10_8t03j"]
-[ext_resource type="AudioStream" uid="uid://doech00lr2w24" path="res://sam (1).wav" id="11_2ieo8"]
-[ext_resource type="AudioStream" uid="uid://b1qtg5r78rj3g" path="res://IMG_3599a.wav" id="12_ebec5"]
-[ext_resource type="Script" uid="uid://da7fhipfsdvup" path="res://player/sprite_3d.gd" id="12_kb6p2"]
+[ext_resource type="Script" uid="uid://rndv587sh0po" path="res://player/player.gd" id="1_rp0kb"]
+[ext_resource type="PackedScene" uid="uid://cej601qw6cr1q" path="res://player/car.blend" id="2_tk34t"]
+[ext_resource type="PackedScene" uid="uid://deq0c2ilxv8pn" path="res://scenes/scuffed_arms.tscn" id="6_uge0o"]
+[ext_resource type="PackedScene" uid="uid://df2g5nfrkscu7" path="res://scenes/car(2).tscn" id="7_bvest"]
+[ext_resource type="PackedScene" uid="uid://cihkxhgroch8b" path="res://godot_plush V2.blend" id="9_a20ii"]
+[ext_resource type="AudioStream" uid="uid://b1qtg5r78rj3g" path="res://IMG_3599a.wav" id="10_x3pa4"]
+[ext_resource type="Texture2D" uid="uid://dnn0hkdntpvlc" path="res://player/asstes/phone.png" id="11_nks8u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kqu6x"]
 
@@ -24,10 +18,6 @@ size = Vector3(1, 1, 2)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_kqu6x"]
 height = 0.2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgyib"]
-shader = ExtResource("4_g6k8r")
-shader_parameter/palette = ExtResource("5_boad6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boad6"]
 albedo_color = Color(0.227426, 0.661394, 0.386432, 1)
@@ -58,7 +48,7 @@ size = Vector2(3.115, 2)
 
 [node name="player" type="VehicleBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_kqu6x")
-script = ExtResource("1_oul6g")
+script = ExtResource("1_rp0kb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -0.25)
@@ -104,23 +94,9 @@ use_as_steering = true
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_kqu6x")
 
-[node name="car" parent="." instance=ExtResource("2_rkbax")]
+[node name="car" parent="." instance=ExtResource("2_tk34t")]
 transform = Transform3D(-1.28949e-08, 0, 0.295, 0, 0.295, 0, -0.295, 0, -1.28949e-08, 0.385793, 0, 0.5)
 visible = false
-
-[node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353947, 0.545252, 0.435729)
-script = ExtResource("3_g1dw6")
-
-[node name="Camera3D" type="Camera3D" parent="head"]
-transform = Transform3D(-1, 3.55271e-15, -8.74228e-08, -2.26267e-08, 0.965926, 0.258819, 8.44439e-08, 0.258819, -0.965926, 0, 0.357602, 0.0538159)
-
-[node name="ColorRect" type="ColorRect" parent="head/Camera3D"]
-material = SubResource("ShaderMaterial_rgyib")
-offset_left = -391.0
-offset_top = -254.0
-offset_right = 3035.0
-offset_bottom = 1611.0
 
 [node name="wheel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.355726, 0.355294, 0.907867)
@@ -147,7 +123,7 @@ material = SubResource("StandardMaterial3D_boad6")
 transform = Transform3D(-1, -3.16141e-08, -8.96306e-08, -9.11019e-08, -0.0935871, 0.995612, 4.37494e-08, 0.995612, 0.0935871, 1.49012e-08, 0.00882119, -0.00135052)
 mesh = SubResource("TextMesh_yw30f")
 
-[node name="scuffed_arms" parent="wheel/Node3D" instance=ExtResource("6_boad6")]
+[node name="scuffed_arms" parent="wheel/Node3D" instance=ExtResource("6_uge0o")]
 transform = Transform3D(-2.65664e-10, -1.50666e-09, -0.035, -0.0348424, -0.00331874, 4.0733e-10, -0.00331874, 0.0348423, -1.47468e-09, 0, 0.256468, 0.116931)
 
 [node name="Label3D" type="Label3D" parent="wheel/Node3D"]
@@ -157,7 +133,7 @@ modulate = Color(0.505882, 0.4, 0.164706, 1)
 outline_modulate = Color(0.505882, 0.4, 0.164706, 1)
 text = "KPH: 200"
 
-[node name="car(2)" parent="." instance=ExtResource("4_yw30f")]
+[node name="car(2)" parent="." instance=ExtResource("7_bvest")]
 transform = Transform3D(-2.49155e-08, 0, 0.57, 0, 0.57, 0, -0.57, 0, -2.49155e-08, 0.249111, -0.373438, 0.353174)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -179,10 +155,7 @@ handle_input_locally = false
 size = Vector2i(615, 452)
 render_target_update_mode = 4
 
-[node name="screen" parent="SubViewport" instance=ExtResource("8_rgyib")]
-position = Vector2(306, 229)
-
-[node name="godot_plush V2" parent="." instance=ExtResource("9_hg6s5")]
+[node name="godot_plush V2" parent="." instance=ExtResource("9_a20ii")]
 transform = Transform3D(-2.34244, 0, 0.109484, 0, 2.345, 0, -0.109484, 0, -2.34244, -1.2024, -0.228171, 0.369945)
 
 [node name="Timer" type="Timer" parent="."]
@@ -193,19 +166,8 @@ autostart = true
 transform = Transform3D(-0.792162, 0, 0.610311, 0, 1, 0, -0.610311, 0, -0.792162, 0, 0.566801, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_ebec5")
+stream = ExtResource("10_x3pa4")
 autoplay = true
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.160099, 0, 0.0399171, 0, 0.165, 0, -0.0399171, 0, 0.160099, 0.769074, 0.6, 0.834276)
-texture = ExtResource("10_8t03j")
-script = ExtResource("12_kb6p2")
-t = ExtResource("10_8t03j")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sprite3D"]
-transform = Transform3D(-5.8148, 0, -1.70852, 0, 6.06061, 0, 1.70852, 0, -5.8148, -0.134874, 0.25066, -0.673158)
-stream = ExtResource("11_2ieo8")
-volume_db = 76.015
 
 [node name="SubViewport2" type="SubViewport" parent="."]
 size = Vector2i(147, 207)
@@ -213,7 +175,7 @@ size_2d_override_stretch = true
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewport2"]
 position = Vector2(66.115, 93.22)
-texture = ExtResource("10_8t03j")
+texture = ExtResource("11_nks8u")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

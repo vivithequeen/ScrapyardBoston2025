@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuycg074qu0gr"
 path.s3tc="res://.godot/imported/godot_plush_roughness.png-7c47006e4247850cd9b437e1de0a9134.s3tc.ctex"
+path.etc2="res://.godot/imported/godot_plush_roughness.png-7c47006e4247850cd9b437e1de0a9134.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/godot_plush_roughness.png"
-dest_files=["res://.godot/imported/godot_plush_roughness.png-7c47006e4247850cd9b437e1de0a9134.s3tc.ctex"]
+dest_files=["res://.godot/imported/godot_plush_roughness.png-7c47006e4247850cd9b437e1de0a9134.s3tc.ctex", "res://.godot/imported/godot_plush_roughness.png-7c47006e4247850cd9b437e1de0a9134.etc2.ctex"]
 
 [params]
 

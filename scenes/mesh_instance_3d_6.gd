@@ -5,6 +5,6 @@ extends MeshInstance3D
 func _ready():
 	pass # Replace with function body.
 func _physics_process(delta):
-	rotation.x+=6
-	rotation.y+=6
-	rotation.z+=6
+	rotation.x+=6/ 3
+	rotation.y+=6/ 3
+	rotation.z+=6/ 3

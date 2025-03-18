@@ -46,8 +46,8 @@ func flip():
 
 
 func _on_timer_timeout():
-	$MeshInstance3D3/AudioStreamPlayer3D.stream = load(["res://sam (1).wav", "res://sam.wav"].pick_random())
-	$MeshInstance3D3/AudioStreamPlayer3D.play()
+	$Sprite3D/AudioStreamPlayer3D.stream = load(["res://sam (1).wav", "res://sam.wav"].pick_random())
+	$Sprite3D/AudioStreamPlayer3D.play()
 	$Timer.wait_time = randi_range(5,15)
 	$Timer.start()
 
@@ -55,3 +55,8 @@ func _on_timer_timeout():
 func _on_audio_stream_player_finished():
 	$AudioStreamPlayer.stream = load(["res://IMG_3598.wav", "res://IMG_3599a.wav","res://20250315_125854.wav"].pick_random())
 	$AudioStreamPlayer.play()
+
+
+func _on_area_3d_body_entered(body:Node3D):
+	if body is VehicleBody3D:
+		apply_impulse(Vector3.UP * 1000)
