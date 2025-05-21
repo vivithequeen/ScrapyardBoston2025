@@ -1,0 +1,253 @@
+[gd_scene load_steps=5 format=3 uid="uid://b610kfhjhsk8l"]
+
+[ext_resource type="Texture2D" uid="uid://kphe5seqhe2r" path="res://Map for Gps.png" id="2_f2txt"]
+[ext_resource type="Script" uid="uid://0y3d1cnlp6g6" path="res://nav/pathPoint.gd" id="3_1ainy"]
+[ext_resource type="Script" uid="uid://dlnuowjbxxfv2" path="res://nav/path_2d.gd" id="4_n6hdu"]
+
+[sub_resource type="Curve2D" id="Curve2D_61qje"]
+
+[node name="Level" type="Node2D"]
+
+[node name="MapForGps" type="Sprite2D" parent="."]
+position = Vector2(393, 325)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_f2txt")
+
+[node name="pathPoint" type="Node2D" parent="."]
+position = Vector2(767, 397)
+script = ExtResource("3_1ainy")
+isStart = true
+connections = [NodePath("../pathPoint4"), NodePath("../pathPoint2")]
+
+[node name="pathPoint2" type="Node2D" parent="."]
+position = Vector2(697, 302)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint"), NodePath("../pathPoint3"), NodePath("../pathPoint8"), NodePath("../pathPoint12")]
+
+[node name="pathPoint3" type="Node2D" parent="."]
+position = Vector2(564, 432)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint4"), NodePath("../pathPoint2"), NodePath("../pathPoint6")]
+
+[node name="pathPoint4" type="Node2D" parent="."]
+position = Vector2(712, 435)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint"), NodePath("../pathPoint3"), NodePath("../pathPoint5")]
+
+[node name="pathPoint5" type="Node2D" parent="."]
+position = Vector2(473, 612)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint4"), NodePath("../pathPoint41"), NodePath("../pathPoint42")]
+
+[node name="pathPoint6" type="Node2D" parent="."]
+position = Vector2(467, 433)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint3"), NodePath("../pathPoint7"), NodePath("../pathPoint39"), NodePath("../pathPoint5")]
+
+[node name="pathPoint7" type="Node2D" parent="."]
+position = Vector2(462, 290)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint8"), NodePath("../pathPoint18"), NodePath("../pathPoint33"), NodePath("../pathPoint6")]
+
+[node name="pathPoint8" type="Node2D" parent="."]
+position = Vector2(538, 292)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint2"), NodePath("../pathPoint9"), NodePath("../pathPoint7")]
+
+[node name="pathPoint9" type="Node2D" parent="."]
+position = Vector2(538, 217)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint8"), NodePath("../pathPoint10"), NodePath("../pathPoint11")]
+
+[node name="pathPoint10" type="Node2D" parent="."]
+position = Vector2(480, 216)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint9")]
+
+[node name="pathPoint11" type="Node2D" parent="."]
+position = Vector2(540, 185)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint9"), NodePath("../pathPoint12"), NodePath("../pathPoint13")]
+
+[node name="pathPoint12" type="Node2D" parent="."]
+position = Vector2(613, 185)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint11"), NodePath("../pathPoint2")]
+
+[node name="pathPoint13" type="Node2D" parent="."]
+position = Vector2(538, 137)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint11"), NodePath("../pathPoint14"), NodePath("../pathPoint15")]
+
+[node name="pathPoint14" type="Node2D" parent="."]
+position = Vector2(480, 136)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint13")]
+
+[node name="pathPoint15" type="Node2D" parent="."]
+position = Vector2(539, 106)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint13"), NodePath("../pathPoint16"), NodePath("../pathPoint17")]
+
+[node name="pathPoint16" type="Node2D" parent="."]
+position = Vector2(593, 107)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint15")]
+
+[node name="pathPoint17" type="Node2D" parent="."]
+position = Vector2(536, 73)
+script = ExtResource("3_1ainy")
+isTarget = true
+connections = [NodePath("../pathPoint15"), NodePath("../pathPoint18")]
+
+[node name="pathPoint18" type="Node2D" parent="."]
+position = Vector2(457, 70)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint17"), NodePath("../pathPoint7"), NodePath("../pathPoint19")]
+
+[node name="pathPoint19" type="Node2D" parent="."]
+position = Vector2(366, 66)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint18"), NodePath("../pathPoint20")]
+
+[node name="pathPoint20" type="Node2D" parent="."]
+position = Vector2(364, 123)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint19"), NodePath("../pathPoint21"), NodePath("../pathPoint32")]
+
+[node name="pathPoint21" type="Node2D" parent="."]
+position = Vector2(285, 118)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint20"), NodePath("../pathPoint22")]
+
+[node name="pathPoint22" type="Node2D" parent="."]
+position = Vector2(273, 82)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint21"), NodePath("../pathPoint23")]
+
+[node name="pathPoint23" type="Node2D" parent="."]
+position = Vector2(199, 96)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint22"), NodePath("../pathPoint24"), NodePath("../pathPoint26")]
+
+[node name="pathPoint24" type="Node2D" parent="."]
+position = Vector2(38, 129)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint23"), NodePath("../pathPoint25")]
+
+[node name="pathPoint25" type="Node2D" parent="."]
+position = Vector2(24, 296)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint24"), NodePath("../pathPoint37"), NodePath("../pathPoint46")]
+
+[node name="pathPoint26" type="Node2D" parent="."]
+position = Vector2(204, 173)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint23"), NodePath("../pathPoint27"), NodePath("../pathPoint30")]
+
+[node name="pathPoint27" type="Node2D" parent="."]
+position = Vector2(103, 177)
+script = ExtResource("3_1ainy")
+isTarget = true
+connections = [NodePath("../pathPoint26"), NodePath("../pathPoint28")]
+
+[node name="pathPoint28" type="Node2D" parent="."]
+position = Vector2(89, 213)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint27"), NodePath("../pathPoint29")]
+
+[node name="pathPoint29" type="Node2D" parent="."]
+position = Vector2(165, 211)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint28"), NodePath("../pathPoint30"), NodePath("../pathPoint37")]
+
+[node name="pathPoint30" type="Node2D" parent="."]
+position = Vector2(208, 212)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint26"), NodePath("../pathPoint29"), NodePath("../pathPoint31"), NodePath("../pathPoint36")]
+
+[node name="pathPoint31" type="Node2D" parent="."]
+position = Vector2(324, 211)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint30"), NodePath("../pathPoint32"), NodePath("../pathPoint33")]
+
+[node name="pathPoint32" type="Node2D" parent="."]
+position = Vector2(364, 209)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint31"), NodePath("../pathPoint20")]
+
+[node name="pathPoint33" type="Node2D" parent="."]
+position = Vector2(331, 285)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint31"), NodePath("../pathPoint7"), NodePath("../pathPoint34")]
+
+[node name="pathPoint34" type="Node2D" parent="."]
+position = Vector2(332, 355)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint33"), NodePath("../pathPoint35"), NodePath("../pathPoint39")]
+
+[node name="pathPoint35" type="Node2D" parent="."]
+position = Vector2(210, 356)
+script = ExtResource("3_1ainy")
+isTarget = true
+connections = [NodePath("../pathPoint36"), NodePath("../pathPoint34"), NodePath("../pathPoint38")]
+
+[node name="pathPoint36" type="Node2D" parent="."]
+position = Vector2(206, 302)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint30"), NodePath("../pathPoint37"), NodePath("../pathPoint35")]
+
+[node name="pathPoint37" type="Node2D" parent="."]
+position = Vector2(165, 299)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint36"), NodePath("../pathPoint29"), NodePath("../pathPoint25")]
+
+[node name="pathPoint38" type="Node2D" parent="."]
+position = Vector2(200, 439)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint39"), NodePath("../pathPoint35"), NodePath("../pathPoint44"), NodePath("../pathPoint46")]
+
+[node name="pathPoint39" type="Node2D" parent="."]
+position = Vector2(337, 432)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint6"), NodePath("../pathPoint34"), NodePath("../pathPoint38"), NodePath("../pathPoint40")]
+
+[node name="pathPoint40" type="Node2D" parent="."]
+position = Vector2(342, 532)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint41"), NodePath("../pathPoint42"), NodePath("../pathPoint44"), NodePath("../pathPoint39")]
+
+[node name="pathPoint41" type="Node2D" parent="."]
+position = Vector2(463, 536)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint6"), NodePath("../pathPoint40"), NodePath("../pathPoint5")]
+
+[node name="pathPoint42" type="Node2D" parent="."]
+position = Vector2(344, 611)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint5"), NodePath("../pathPoint40"), NodePath("../pathPoint43")]
+
+[node name="pathPoint43" type="Node2D" parent="."]
+position = Vector2(200, 596)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint42"), NodePath("../pathPoint44"), NodePath("../pathPoint45")]
+
+[node name="pathPoint44" type="Node2D" parent="."]
+position = Vector2(197, 528)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint38"), NodePath("../pathPoint40"), NodePath("../pathPoint43")]
+
+[node name="pathPoint45" type="Node2D" parent="."]
+position = Vector2(22, 580)
+script = ExtResource("3_1ainy")
+isTarget = true
+connections = [NodePath("../pathPoint43"), NodePath("../pathPoint46")]
+
+[node name="pathPoint46" type="Node2D" parent="."]
+position = Vector2(19, 439)
+script = ExtResource("3_1ainy")
+connections = [NodePath("../pathPoint25"), NodePath("../pathPoint38"), NodePath("../pathPoint45")]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_61qje")
+script = ExtResource("4_n6hdu")
